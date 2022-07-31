@@ -1,0 +1,22 @@
+$colors: (
+  primary: #131c36,
+  secondary: #3abe76,
+  tertiary: #4d43c1,
+  tertiary-alt: #3825d0,
+  quaternary: #ff6600,
+  quaternary-alt: #ff851c,
+  styleguide: #000,
+);
+$colors: map-merge((
+  alert: #B11730,
+  warning: #B8860B,
+  info: #205D86,
+  success: #09830E,
+  black: #0C0A09,
+  gray: #E5E5E5,
+  white: #FFF,
+  facebook: #3B5998,
+  instagram: #E1306C,
+  youtube: #CD201F,
+  twitter: #1DA1F2,
+), $colors);

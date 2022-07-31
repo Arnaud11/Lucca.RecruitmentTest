@@ -1,0 +1,57 @@
+<div class="m-itemsList">
+    <div class="m-itemsList--header">
+        <h2>Liste des dépenses</h2>
+
+        <div class="add-item">
+            <button class="a-button -add" (click)="add()"></button>
+        </div>
+    </div>
+
+    <div class="m-itemList--total">
+        <button class="a-button" (click)="getTotal()">
+            Click
+        </button>
+    </div>
+
+    <ul class="--list">
+        <li class="--item" *ngFor="let p of items; let i=index;">
+            <div class="--item_head">
+                <p>Détails de la note de frais</p>
+                <button class="delete" title="delete product" (click)="delete(p.id)">x</button>
+            </div>
+
+            <div class="--item_content">
+                <div class="info">
+                    <p>Nature</p>
+                    <span>{{p.nature}}</span>
+                </div>
+                <div class="info">
+                    <p>Date dépense</p>
+                    <span>{{p.purchasedOn}}</span>
+                </div>
+                <div class="info">
+                    <p>Montant (TTC)</p>
+                    <div class="amount">
+                        <span>{{p.originalAmount.amount}}</span>
+                        &nbsp;
+                        <span>{{p.originalAmount.currency}}</span>
+                    </div>
+                </div>
+                <div class="info">
+                    <p>Montant (TTC)</p>
+                    <div class="amount">
+                        <span>{{p.convertedAmount.amount}}</span>
+                        &nbsp;
+                        <span>{{p.convertedAmount.currency}}</span>
+                    </div>
+                </div>
+                <div class="edit">
+                    <a class="a-button -primary" (click)="update(p.id, p)"
+                     >
+                        <p class="badge">Éditer</p>
+                    </a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

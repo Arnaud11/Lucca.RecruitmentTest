@@ -1,0 +1,54 @@
+html {
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  text-size-adjust: 100%;
+
+  &.is-loading,
+  &.is-loading * {
+    cursor: progress;
+    pointer-events: none;
+  }
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+}
+
+html,
+body {
+  background-color: clr(white);
+  
+  @media only screen and (min-width: 768px) {
+    overflow: hidden;
+    height: 100%;
+  }
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+hr {
+  margin: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: clr(black);
+  border-top: 0;
+}
+
+.c-scrollbar {
+  z-index: 2;
+}
+
+.dg.ac {
+  z-index: 5 !important;
+}
+
+.a-scroll {
+  @media only screen and (min-width: 768px) {
+    min-height: 100vh;
+  }
+}

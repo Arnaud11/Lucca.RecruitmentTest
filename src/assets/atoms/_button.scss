@@ -1,0 +1,76 @@
+$classname: 'a-button';
+
+.#{$classname} {
+  position: relative;
+  width: fit-content;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 5.5rem;
+  text-align: left;
+  transition: background-color 0.15s ease-in-out;
+
+  &.-primary {
+    background-color: clr(tertiary);
+    color: clr(white);
+    
+    &:hover {
+      background-color: clr(tertiary-alt);
+      color: clr(white);
+    }
+  }
+
+  &.-secondary {
+    background-color: clr(white);
+    color: clr(primary);
+  }
+
+  &.-add {
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    background-color: clr(quaternary);
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 20px;
+      background-color: white;
+      transform: rotate(0deg);
+      transition: transform 250ms ease;
+
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 20px;
+      transform: rotate(90deg);
+      background-color: white;
+      transition: transform 250ms ease;
+    }
+    
+    &:hover {
+      background-color: clr(quaternary-alt);
+      &::before {
+        transform: rotate(270deg);
+      }
+
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &:hover {
+    &.-primary {
+      background-color: clr(third);
+    }
+    &.-secondary {
+      background-color: lighten(clr(secondary), 10%);
+    }
+  }
+}

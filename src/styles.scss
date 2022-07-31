@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+
+// TOOLS
+@import './assets/tools/mixins';
+
+
+// CONFIG
+@import './assets/config/config.colors';
+@import './assets/config/config.ease';
+@import './assets/config/config.fonts';
+@import './assets/config/config';
+
+// UTILS
+@import './assets/utils/debgrid';
+@import './assets/utils/helpers';
+@import './assets/utils/print';
+@import './assets/utils/reset';
+
+// GLOBAL
+@import './assets/global/animations';
+@import './assets/global/box-sizing';
+@import './assets/global/commons';
+@import './assets/global/grid';
+@import './assets/global/icons';
+@import './assets/global/state';
+@import './assets/global/typography';
+
+
+// ATOMS
+@import './assets/atoms/button';
+
+// MOLECULES
+@import './assets/molecules/expense-item';
+@import './assets/molecules/items-list';
+
+// @import 'blocks/*';
+
+// ORGANISMS
+@import './assets/organisms/header';
+@import './assets/organisms/footer';
+@import './assets/organisms/loader';
+
+
+// @import 'templates/*
+
