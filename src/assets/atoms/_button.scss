@@ -18,13 +18,13 @@ $classname: 'a-button';
     background-color: clr(tertiary);
     border-bottom: 2px solid clr(tertiary-dark);
     color: clr(white);
-    
+
     &:hover {
       background-color: clr(tertiary-alt);
       color: clr(white);
     }
   }
-  
+
   &.-secondary {
     background-color: clr(quaternary);
     border-bottom: 2px solid clr(quaternary-dark);
@@ -42,17 +42,16 @@ $classname: 'a-button';
     background-color: clr(quaternary);
     border-bottom: 2px solid clr(quaternary);
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       height: 2px;
       width: 20px;
       background-color: white;
       transform: rotate(0deg);
       transition: transform 250ms ease;
-
     }
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       height: 2px;
       width: 20px;
@@ -60,7 +59,7 @@ $classname: 'a-button';
       background-color: white;
       transition: transform 250ms ease;
     }
-    
+
     &:hover {
       background-color: clr(quaternary-alt);
       &::before {
@@ -72,24 +71,23 @@ $classname: 'a-button';
       }
     }
   }
-  
+
   &.-delete {
     position: relative;
     width: 3.3rem;
     height: 3.3rem;
     background-color: clr(alert);
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       height: 2px;
       width: 20px;
       background-color: white;
       transform: rotate(45deg);
       transition: transform 250ms ease;
-
     }
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       height: 2px;
       width: 20px;
@@ -97,7 +95,7 @@ $classname: 'a-button';
       background-color: white;
       transition: transform 250ms ease;
     }
-    
+
     &:hover {
       &::before {
         transform: rotate(0deg);
@@ -112,10 +110,135 @@ $classname: 'a-button';
       width: 2rem;
       height: 2rem;
 
-      &::before, &::after {
+      &::before,
+      &::after {
         width: 10px;
       }
     }
+  }
 
+  &.-first,
+  &.-last,
+  &.-previous,
+  &.-next {
+    width: 4rem;
+    height: 4rem;
+    background-color: clr(tertiary);
+    color: clr(white);
+    margin-right: 2rem;
+
+    &:hover {
+      background-color: clr(tertiary-alt);
+      color: clr(white);
+    }
+  }
+
+  &.-previous {
+    position: relative;
+    background-color: clr(grey-600);
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+
+      border-left: 1px solid clr(black);
+      border-bottom: 1px solid clr(black);
+      transform: translate(-20%, -40%) rotate(45deg);
+      transition: transform 250ms ease-in-out;
+    }
+
+    &:hover {
+      background-color: clr(grey-600);
+    }
+  }
+
+  &.-first {
+    position: relative;
+    background-color: clr(grey-300);
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      border-left: 1px solid clr(black);
+      border-bottom: 1px solid clr(black);
+      transform: translate(20%, -40%) rotate(45deg);
+      transition: transform 250ms ease-in-out;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      border-left: 1px solid clr(black);
+      border-bottom: 1px solid clr(black);
+      transform: translate(-80%, -40%) rotate(45deg);
+      transition: transform 250ms ease-in-out;
+    }
+
+    &:hover {
+      background-color: clr(grey-200);
+    }
+  }
+
+  &.-next {
+    position: relative;
+    background-color: clr(grey-800);
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      border-right: 1px solid clr(black);
+      border-bottom: 1px solid clr(black);
+      transform: translate(-60%, -40%) rotate(-45deg);
+      transition: transform 250ms ease-in-out;
+    }
+
+    &:hover {
+      background-color: clr(grey-500);
+    }
+  }
+  
+  &.-last {
+    position: relative;
+    background-color: clr(grey-300);
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      border-right: 1px solid clr(black);
+      border-bottom: 1px solid clr(black);
+      transform: translate(-120%, -40%) rotate(-45deg);
+      transition: transform 250ms ease-in-out;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      border-right: 1px solid clr(black);
+      border-bottom: 1px solid clr(black);
+      transform: translate(-20%, -40%) rotate(-45deg);
+      transition: transform 250ms ease-in-out;
+    }
+    &:hover {
+      background-color: clr(grey-200);
+    }
   }
 }
