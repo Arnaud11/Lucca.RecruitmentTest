@@ -17,7 +17,7 @@ export class ItemEditComponent implements OnInit {
 
   natures = [
     { id: 1, name: 'Restaurant' },
-    { id: 2, name: 'Hotal' },
+    { id: 2, name: 'Hotel' },
     { id: 3, name: 'Indemnités Kms' },
     { id: 4, name: 'Frais de péage' },
     { id: 5, name: 'Carburant' },

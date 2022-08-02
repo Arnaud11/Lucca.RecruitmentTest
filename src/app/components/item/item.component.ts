@@ -18,7 +18,6 @@ export class ItemComponent implements OnInit {
   constructor(public rest: RestService, private router: Router) {}
 
   ngOnInit(): any {
-
     this.rest.sendGetRequest().pipe(takeUntil(this.destroy$)).subscribe((res: HttpResponse<any>)=>{
       console.log(res);
       this.items = res.body;

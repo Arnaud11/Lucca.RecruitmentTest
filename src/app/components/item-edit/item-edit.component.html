@@ -5,8 +5,8 @@
     <div class="row --list">
         <div class="sm-column-12 lg-column-20 --item border-r">
             <label>Nature:</label>
-            <select ngModel="itemData.nature">
-                <option selected disabled>Select nature</option>
+            <select [(ngModel)]="itemData.nature">
+                <option value="" selected disabled hidden>-</option>
                 <option *ngFor="let nature of natures" [value]="nature.name">{{nature.name}}</option>
             </select>
         </div>
