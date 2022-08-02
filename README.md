@@ -1,3 +1,22 @@
+# Environnement :
+
+Angular 13 - node 12
+
+# Run :
+
+Après avoir installer les packages npm, dans un terminal :
+
+```
+> ng serve
+```
+
+Dans un second terminal :
+
+```
+> node api/server.js
+```
+
+
 # Cleemy : test technique front
 
 Le test consiste à réaliser une Single Page Application avec Angular pour saisir les dépenses effectuées lors d'un voyage professionnel (le but étant de se les faire rembourser par son employeur).
