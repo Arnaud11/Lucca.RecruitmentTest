@@ -1,0 +1,32 @@
+.m-editItemsList {
+  &--header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 0 3rem;
+  }
+
+  .--list {
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    box-shadow: 0px -1px 7px 0px rgba(0, 0, 0, 0.2);
+
+    .--item {
+      padding: 1.5rem;
+      &:not(:last-of-type) {
+        border-bottom: 1px solid clr(lighter-gray);
+      }
+
+      &.border-r {
+        border-right: 1px solid clr(lighter-gray);
+      }
+    }
+  }
+  .a-button {
+    margin-bottom: 2rem;
+    @media #{$lg} {
+      margin-bottom: 6rem;
+    }
+  }
+}

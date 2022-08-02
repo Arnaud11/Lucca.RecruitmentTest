@@ -25,21 +25,21 @@ export class ItemEditComponent implements OnInit {
     { id: 7, name: 'Location de vehicule' },
     { id: 8, name: 'Transports' },
     { id: 9, name: 'Téléphone' },
-    { id: 10, name: 'Livres, revues, journaux techniques' },
+    { id: 10, name: 'Documentation' },
   ];
 
   @Input() itemData: any = {
-    purchasedOn: '2022-05-11',
+    purchasedOn: '',
     nature: '',
-    orginalAmount: {
+    originalAmount: {
       amount: 0,
-      currency: 'EUR',
+      currency: '',
     },
     convertedAmount: {
       amount: 0,
-      currency: 'EUR',
+      currency: '',
     },
-    comment: '',
+    comment: ''
   };
 
   constructor(
@@ -53,6 +53,10 @@ export class ItemEditComponent implements OnInit {
       console.log(data);
       this.itemData = data;
     });
+  }
+
+  cancel(): void {
+    this.router.navigate(['/items/']);
   }
 
   updateItem(): void {

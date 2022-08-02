@@ -1,57 +1,86 @@
-<div class="m-itemsList">
-    <div class="m-itemsList--header">
+<div class="m-itemsIndex">
+    <div class="m-itemsIndex--header">
         <h2>Liste des dépenses</h2>
-
-        <div class="add-item">
-            <button class="a-button -add" (click)="add()"></button>
+        <div class="m-itemsIndex--content">
+            <div class="total-expenses">
+                <div class="--expenses" *ngIf="total">
+                    <span>Nombre de dépense : </span>
+                    <p>&nbsp;{{total}} €</p>
+                </div>
+                &nbsp;
+                <div class="--totals" *ngIf="total">
+                    <span>Total : </span>
+                    <p>&nbsp;{{total}} €</p>
+                </div>
+            </div>
+            <div class="add-item">
+                <button class="a-button -add" (click)="add()"></button>
+            </div>  
         </div>
     </div>
 
-    <div class="m-itemList--total">
-        <button class="a-button" (click)="getTotal()">
-            Click
-        </button>
-    </div>
-
-    <ul class="--list">
-        <li class="--item" *ngFor="let p of items; let i=index;">
-            <div class="--item_head">
-                <p>Détails de la note de frais</p>
-                <button class="delete" title="delete product" (click)="delete(p.id)">x</button>
-            </div>
-
-            <div class="--item_content">
-                <div class="info">
+    <table class="m-itemsIndex--table">
+        <thead>
+            <tr class="--head">
+                <th class="sort" [appSort]="items" data-order="desc" data-name="nature" scope="col">
                     <p>Nature</p>
-                    <span>{{p.nature}}</span>
-                </div>
-                <div class="info">
+                </th>
+                <th class="sort" [appSort]="items" data-order="desc" data-name="purchasedOn" scope="col">
                     <p>Date dépense</p>
+                </th>
+                <th scope="col">
+                    <p>Montant original</p>
+                </th>
+                <th scope="col">
+                    <p>Montant en €</p>
+                </th>
+                <th scope="col">
+                    <p>Commentaire</p>
+                </th>
+                <th scope="col">
+                    &nbsp;
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="--item" *ngFor="let p of items; let i=index;">
+                <td data-label="Nature">
+                    <span class="label">{{p.nature}}</span>
+                </td>
+                <td data-label="Purchased On">
                     <span>{{p.purchasedOn}}</span>
-                </div>
-                <div class="info">
-                    <p>Montant (TTC)</p>
+                </td>
+                <td data-label="Original Amount">
                     <div class="amount">
                         <span>{{p.originalAmount.amount}}</span>
                         &nbsp;
                         <span>{{p.originalAmount.currency}}</span>
                     </div>
-                </div>
-                <div class="info">
-                    <p>Montant (TTC)</p>
+                </td>
+                <td data-label="Converted Amount">
                     <div class="amount">
                         <span>{{p.convertedAmount.amount}}</span>
                         &nbsp;
                         <span>{{p.convertedAmount.currency}}</span>
                     </div>
-                </div>
-                <div class="edit">
-                    <a class="a-button -primary" (click)="update(p.id, p)"
-                     >
-                        <p class="badge">Éditer</p>
-                    </a>
-                </div>
-            </div>
-        </li>
-    </ul>
+                </td>
+                <td data-label="Comment">
+                    <span>{{p.comment}}</span>
+                </td>
+                <td class="cta-container">
+                    <div class="edit-cta">
+                        <a class="a-button -primary" (click)="update(p.id, p)">
+                            <p class="badge">Éditer</p>
+                        </a>
+                    </div>
+                    <div class="delete-cta">
+
+                        <div>
+                            <a class="a-button -delete" (click)="delete(p.id)"></a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

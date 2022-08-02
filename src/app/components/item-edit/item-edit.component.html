@@ -1,33 +1,51 @@
-<div>
-    <h2>Item Edit</h2>
-    <div>
-        <label>Purchased On:
-            <input type="date" [(ngModel)]="itemData.purchasedOn" placeholder="Purshased On" />
-        </label><br>
-        <label>Nature:
-            <input [(ngModel)]="itemData.nature" placeholder="Nature" />
-        </label><br>
-        <select [(ngModel)]="itemData.nature">
-            <option selected disabled>Select nature</option>
-            <option *ngFor="let nature of natures" [value]="nature.name">{{nature.name}}</option>
-        </select><br>
-        <label>Original Amount:
-            <input type="number" [(ngModel)]="itemData.originalAmount.amount" placeholder="Amount" />
-        </label><br>
-        <label>Converted Amount:
-            <input type="number" [(ngModel)]="itemData.convertedAmount.amount" placeholder="Amount" />
-        </label><br>
-        <label>Currency:</label>
-        <select [(ngModel)]="itemData.originalAmount.currency">
-            <option selected disabled>Select Currency</option>
-            <option *ngFor="let currency of currencies" [value]="currency.name">{{currency.name}}</option>
-        </select><br>
-        <label>Comment:
-            <input [(ngModel)]="itemData.comment" placeholder="Comment" />
-        </label><br>
-        <label>test:
-            <input [(ngModel)]="itemData.createdAt" placeholder="test" />
-        </label><br>
+<section class="m-editItemsList">
+    <div class="m-editItemsList--header row">
+        <h2>Item Edit</h2>
     </div>
-    <button (click)="updateItem()">Update</button>
-</div>
+    <div class="row --list">
+        <div class="sm-column-12 lg-column-20 --item border-r">
+            <label>Nature:</label>
+            <select [(ngModel)]="itemData.nature">
+                <option selected disabled>Select nature</option>
+                <option *ngFor="let nature of natures" [value]="nature.name">{{nature.name}}</option>
+            </select>
+        </div>
+        <div class="sm-column-12 lg-column-4 --item">
+            <label>Purchased On:</label>
+            <input type="date" [(ngModel)]="itemData.purchasedOn" placeholder="Purchased On" />
+        </div>
+        <div class="sm-column-12 lg-column-20 --item border-r">
+            <label>Original Amount:</label>
+            <input type="number" [(ngModel)]="itemData.originalAmount.amount" placeholder="Amount" />
+        </div>
+        <div class="sm-column-12 lg-column-4 --item">
+            <label>Currency:</label>
+            <select [(ngModel)]="itemData.originalAmount.currency">
+                <option selected disabled>Select Currency</option>
+                <option *ngFor="let currency of currencies" [value]="currency.name">{{currency.name}}</option>
+            </select>
+        </div>
+        <div class="sm-column-12 lg-column-20 --item border-r">
+            <label>Converted Amount:</label>
+            <input type="number" [(ngModel)]="itemData.convertedAmount.amount" placeholder="Amount" />
+        </div>
+        <div class="sm-column-12 lg-column-4 --item">
+            <label>Currency:</label>
+            <select [(ngModel)]="itemData.convertedAmount.currency">
+            <option selected>EUR</option>
+            </select>
+        </div>
+        <div class="sm-column-24 lg-column-24 --item">
+            <label>Comment:</label>
+            <input type="textarea" [(ngModel)]="itemData.comment" placeholder="Comment" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="sm-column-24 lg-column-6">
+            <button class="a-button -primary" (click)="updateItem()">Enregistrer la dépense</button>
+        </div>
+        <div class="sm-column-24 sm-offset-0  lg-column-4 lg-offset-1">
+            <button class="a-button -secondary" (click)="cancel()">Annuler</button>
+        </div>
+    </div>
+</section>

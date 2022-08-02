@@ -9,12 +9,14 @@ $classname: 'a-button';
   justify-content: center;
   text-decoration: none;
   padding: 0.6rem 1.4rem;
-  border-radius: 5.5rem;
+  border-radius: 3px;
   text-align: left;
   transition: background-color 0.15s ease-in-out;
+  cursor: pointer;
 
   &.-primary {
     background-color: clr(tertiary);
+    border-bottom: 2px solid clr(tertiary-dark);
     color: clr(white);
     
     &:hover {
@@ -22,10 +24,15 @@ $classname: 'a-button';
       color: clr(white);
     }
   }
-
+  
   &.-secondary {
-    background-color: clr(white);
-    color: clr(primary);
+    background-color: clr(quaternary);
+    border-bottom: 2px solid clr(quaternary-dark);
+    color: clr(white);
+
+    &:hover {
+      background-color: clr(quaternary-alt);
+    }
   }
 
   &.-add {
@@ -33,6 +40,7 @@ $classname: 'a-button';
     width: 4rem;
     height: 4rem;
     background-color: clr(quaternary);
+    border-bottom: 2px solid clr(quaternary);
     &::before {
       content: "";
       position: absolute;
@@ -64,13 +72,50 @@ $classname: 'a-button';
       }
     }
   }
+  
+  &.-delete {
+    position: relative;
+    width: 3.3rem;
+    height: 3.3rem;
+    background-color: clr(alert);
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 20px;
+      background-color: white;
+      transform: rotate(45deg);
+      transition: transform 250ms ease;
 
-  &:hover {
-    &.-primary {
-      background-color: clr(third);
     }
-    &.-secondary {
-      background-color: lighten(clr(secondary), 10%);
+    &::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 20px;
+      transform: rotate(135deg);
+      background-color: white;
+      transition: transform 250ms ease;
     }
+    
+    &:hover {
+      &::before {
+        transform: rotate(0deg);
+      }
+
+      &::after {
+        transform: rotate(0deg);
+      }
+    }
+
+    @media #{$sm-only, $md-only} {
+      width: 2rem;
+      height: 2rem;
+
+      &::before, &::after {
+        width: 10px;
+      }
+    }
+
   }
 }

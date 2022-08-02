@@ -1,22 +1,49 @@
 $colors: (
   primary: #131c36,
   secondary: #3abe76,
-  tertiary: #4d43c1,
-  tertiary-alt: #3825d0,
+  tertiary: #4280fa,
+  tertiary-dark: #083691,
+  tertiary-alt: #0a48c2,
   quaternary: #ff6600,
-  quaternary-alt: #ff851c,
+  quaternary-dark: #a82d00,
+  quaternary-alt: #cc3d00,
   styleguide: #000,
+
+  // Palette grey
+    grey-text: #ffffff,
+  grey-50: #ebf0fa,
+  grey-100: #e0e7f6,
+  grey-200: #d2dcef,
+  grey-300: #becbe4,
+  grey-400: #acbbd7,
+  grey-500: #96a6c5,
+  grey-600: #6c7c9d,
+  grey-700: #445473,
+  grey-800: #2a3551,
+  grey-900: #131d35,
+  // Palette success
+  success-600: #49b540,
+  success-700: #3c9933,
+  success-800: #1b7d12,
+  success-900: #0e6b06,
+  // Palette warning
+  warning-600: #f46a25,
+  warning-700: #e55006,
+  warning-800: #cc3d00,
+  warning-900: #b23000,
+  // Palette error
+  error-600: #ef3957,
+  error-700: #e51a3b,
+  error-800: #af0e29,
+  error-900: #91081f,
 );
-$colors: map-merge((
-  alert: #B11730,
-  warning: #B8860B,
-  info: #205D86,
-  success: #09830E,
-  black: #0C0A09,
-  gray: #E5E5E5,
-  white: #FFF,
-  facebook: #3B5998,
-  instagram: #E1306C,
-  youtube: #CD201F,
-  twitter: #1DA1F2,
-), $colors);
+
+$colors: map-merge(
+  (
+    alert: #91081f,
+    light-gray: #7d95a3,
+    lighter-gray: #c2dceb,
+    white: #fff,
+  ),
+  $colors
+);

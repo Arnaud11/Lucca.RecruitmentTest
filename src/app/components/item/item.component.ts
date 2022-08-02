@@ -9,17 +9,25 @@ import { Router } from '@angular/router';
 })
 export class ItemComponent implements OnInit {
   items: Item[] = [];
+  total: any;
 
   constructor(public rest: RestService, private router: Router) {}
 
-  ngOnInit(): void {
-    this.getItems();
+  ngOnInit(): any {
+    this.total = this.getItems();
   }
 
   getItems(): void {
     this.rest.getItems().subscribe((resp: any) => {
       this.items = resp;
-      console.log(this.items);
+    });
+
+    var sum = 0;
+    this.rest.getTotal().subscribe((data) => {
+      data.forEach((element: { convertedAmount: { amount: number } }) => {
+        sum += element.convertedAmount.amount;
+      });
+      this.total = sum;
     });
   }
 
@@ -36,18 +44,6 @@ export class ItemComponent implements OnInit {
         console.log(err);
       }
     );
-  }
-
-  getTotal(): void {
-    var total = 0
-    this.rest.getItems().subscribe((resp: any) => {
-      this.items = resp;
-      this.items.forEach(element => {
-        total += element.originalAmount.amount
-      });
-
-      return total
-    });
   }
 
   delete(id: string): void {

@@ -77,9 +77,28 @@ h4,
   }
 }
 
+
+label {
+  position: relative;
+  font-size: 1.4rem;
+  padding-top: 1rem;
+  color: clr(light-gray);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.label {
+  position: relative;
+  font-size: 1rem;
+  background-color: clr(success-700);
+  padding: 0.8rem;
+  border-radius: 15px;
+  color: white;
+}
+
 p,
 .a-p {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1.25;
   letter-spacing: .02em;
 
