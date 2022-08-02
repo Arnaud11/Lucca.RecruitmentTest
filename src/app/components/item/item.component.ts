@@ -14,6 +14,7 @@ export class ItemComponent implements OnInit {
   destroy$: Subject<boolean> = new Subject<boolean>();
   items: Item[] = [];
   total: any;
+  numberExpenses: any;
 
   constructor(public rest: RestService, private router: Router) {}
 
@@ -22,6 +23,17 @@ export class ItemComponent implements OnInit {
       console.log(res);
       this.items = res.body;
     })
+
+    var sum = 0;
+    var number = 0;
+    this.rest.getTotal().subscribe((data) => {
+      data.forEach((element: { convertedAmount: { amount: number } }) => {
+        sum += element.convertedAmount.amount;
+        number += 1;
+      });
+      this.total = sum;
+      this.numberExpenses = number;
+    });
   }
 
   ngOnDestroy() {
