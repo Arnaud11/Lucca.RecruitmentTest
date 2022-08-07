@@ -1,0 +1,100 @@
+{
+  "expenseItems": [
+    {
+      "id": "727212a0-4d73-4615-bd23-d7df6f562491",
+      "purchasedOn": "2018-12-04",
+      "nature": "Restaurant",
+      "originalAmount": {
+        "amount": 17,
+        "currency": "GBP"
+      },
+      "convertedAmount": {
+        "amount": 19,
+        "currency": "EUR"
+      },
+      "comment": "Mission de 5 jours à Londres",
+      "createdAt": "2018-12-05T14:00:34.435154Z",
+      "lastModifiedAt": "2022-08-02T15:08:11.076Z"
+    },
+    {
+      "purchasedOn": "2022-05-01",
+      "nature": "Carburant",
+      "originalAmount": {
+        "amount": 400,
+        "currency": "EUR"
+      },
+      "convertedAmount": {
+        "amount": 450,
+        "currency": "EUR"
+      },
+      "comment": "Lorem ",
+      "createdAt": "2022-08-02T14:53:21.523Z",
+      "lastModifiedAt": "2022-08-02T14:56:41.693Z",
+      "id": "02403ae2-805d-4149-a382-69d18b4fe786"
+    },
+    {
+      "purchasedOn": "2022-08-02",
+      "nature": "Carburant",
+      "originalAmount": {
+        "amount": 40,
+        "currency": "EUR"
+      },
+      "convertedAmount": {
+        "amount": 40,
+        "currency": "EUR"
+      },
+      "comment": "Trajet d'affaire entre Marseille et Montpellier",
+      "createdAt": "2022-08-02T15:07:05.755Z",
+      "lastModifiedAt": "2022-08-02T15:44:27.589Z",
+      "id": "d30b0102-bcc9-4823-8412-5b42fc13f56c"
+    },
+    {
+      "purchasedOn": "",
+      "nature": "Indemnités Kms",
+      "originalAmount": {
+        "amount": null,
+        "currency": ""
+      },
+      "convertedAmount": {
+        "amount": null,
+        "currency": ""
+      },
+      "comment": "",
+      "createdAt": "2022-08-02T15:44:03.086Z",
+      "lastModifiedAt": "2022-08-02T15:44:03.086Z",
+      "id": "2d10176c-82ac-4e1d-8190-05551664dbf6"
+    },
+    {
+      "purchasedOn": "",
+      "nature": "Transports",
+      "originalAmount": {
+        "amount": null,
+        "currency": ""
+      },
+      "convertedAmount": {
+        "amount": null,
+        "currency": ""
+      },
+      "comment": "",
+      "createdAt": "2022-08-02T15:44:07.072Z",
+      "lastModifiedAt": "2022-08-02T15:44:07.072Z",
+      "id": "ea60484a-e52e-4fb1-b655-8ce00cb893cc"
+    },
+    {
+      "purchasedOn": "",
+      "nature": "Documentation",
+      "originalAmount": {
+        "amount": null,
+        "currency": ""
+      },
+      "convertedAmount": {
+        "amount": null,
+        "currency": ""
+      },
+      "comment": "",
+      "createdAt": "2022-08-02T15:44:12.841Z",
+      "lastModifiedAt": "2022-08-02T15:44:18.020Z",
+      "id": "35ab8828-0142-4ffd-b641-2423aa941b70"
+    }
+  ]
+}
